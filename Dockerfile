@@ -30,7 +30,7 @@ WORKDIR /opt/dso/thirdparty/libzip-1.1.1/
 RUN ./configure && make && make install && cp lib/zipconf.h /usr/local/include/zipconf.h
 
 # install dso
-WORKDIR /dso
+WORKDIR /opt/dso
 RUN mkdir build
-WORKDIR /dso/build
-RUN cmake ..  && make -j4 && make install
+WORKDIR /opt/dso/build
+RUN cmake ..  && make -j4
