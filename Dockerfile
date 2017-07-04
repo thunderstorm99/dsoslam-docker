@@ -34,3 +34,9 @@ WORKDIR /opt/dso
 RUN mkdir build
 WORKDIR /opt/dso/build
 RUN cmake ..  && make -j4
+
+# install tools for getting the dataset
+WORKDIR /opt/dso/build/bin
+RUN apt -y install wget unzip
+RUN wget http://vision.in.tum.de/mono/dataset/sequence_01.zip
+RUN unzip sequence_01.zip
